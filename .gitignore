@@ -7,6 +7,8 @@ dist/
 __pycache__/
 *.so
 *~
+saved_resource(1)_files/
+*.csv
 
 # due to using tox and pytest
 .tox

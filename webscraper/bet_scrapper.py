@@ -5,6 +5,7 @@ from pages import *
 import json
 import io
 import pathlib
+import csv
 
 def main():
     # binary = FirefoxBinary()
@@ -24,8 +25,17 @@ def main():
 
     driver.quit()
 
-    with io.open('bets.json', 'w', encoding="utf-8") as f:
-        f.write(str(json.dumps(bets, ensure_ascii=False)))
+    print(bets)
+    # with io.open('bets.json', 'w', encoding="utf-8") as f:
+    #     f.write(str(json.dumps(bets, ensure_ascii=False)))
+
+    # csv header
+    fieldnames = ['bet_line', 'bet_stake', 'bet_odds']
+
+    with open('bets.csv', 'w', encoding='UTF8', newline='') as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(bets)
 
 
 if __name__ == '__main__':
