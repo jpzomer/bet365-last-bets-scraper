@@ -19,7 +19,8 @@ class BetPage(Page):
 
         output = []
         for index, participant in enumerate(participants):
-            a = (participant.text[:-4])
+            # a = (participant.text[:-4])
+            a = (participant.text)
             b = (markets[index].text)
             c = (fixtures[index].text[5:])
             d = (odds[index].text.replace('.', ','))

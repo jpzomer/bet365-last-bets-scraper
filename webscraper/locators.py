@@ -1,7 +1,8 @@
 from selenium.webdriver.common.by import By
 
 class BetHistoryLocators(object):
-    BET_ENTRY = (By.CLASS_NAME, "myb-OpenBetItem")
+    BET_ENTRY = (By.CLASS_NAME, "myb-SettledBetItem")
+    #  SettledBetItem  myb-OpenBetItem
 
     BET_ENTRY_ODDS = (By.CLASS_NAME, "myb-BetParticipant_HeaderOdds") 
 
